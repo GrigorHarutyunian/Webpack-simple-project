@@ -1,19 +1,20 @@
 const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
 module.exports = {
+  mode: "production",
   devServer: {
-    port: 3000,
+    port: 8080,
     hot: true,
     open: true,
     historyApiFallback: true,
   },
-
   entry: {
     main: path.resolve(__dirname, "src/index.js"),
   },
   output: {
-    filename: "[hash].js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
   },
   plugins: [
