@@ -2,8 +2,15 @@ const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
+  devServer: {
+    port: 3000,
+    hot: true,
+    open: true,
+    historyApiFallback: true,
+  },
+
   entry: {
-    main: parth.resolve(__dirname, "src/index.js"),
+    main: path.resolve(__dirname, "src/index.js"),
   },
   output: {
     filename: "[hash].js",
@@ -11,8 +18,16 @@ module.exports = {
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: path.resolve(_dirname, "src/index.html"),
+      template: path.resolve(__dirname, "src/index.html"),
     }),
     new CleanWebpackPlugin(),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
 };
