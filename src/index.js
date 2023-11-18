@@ -1,5 +1,5 @@
-import { createElement } from "./newFile.js";
+import { createElement } from "./newElement.js";
 
-const rootElement = document.getElementById("root");
+const root = document.getElementById("root");
 
-rootElement.append(createElement({ tagName: "h1", content: "Mushegh" }));
+root.appendChild(createElement({ tag: "p", content: "Goqor" }));
