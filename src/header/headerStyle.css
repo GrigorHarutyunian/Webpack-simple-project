@@ -1,0 +1,69 @@
+
+
+header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+.headerContainer{
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.headerLogo {
+    width: 100px;
+    padding: 10px;
+}
+
+.headerContainerMenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerNavBar{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 20px 0 20px;
+}
+
+nav ul li a {
+    position: relative;
+    display: block;
+    color: aqua;
+    overflow: hidden;
+    height: 30px;
+    text-shadow: 3px 0px 7px rgba(31, 30, 29, 0.5), -3px 0px 7px rgba(31, 30, 26, 0.5), 0px 4px 7px rgba(28, 27, 23, 0.5);
+}
+
+nav ul li:hover > a::before {
+    left: 0;
+    transition: .5s ease-in-out;
+}
+
+
+nav ul li a.active::before {
+    left: 0;
+}
+
+nav ul li a::before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background-color: aqua;
+    transition: .5s ease-in-out;
+    border-radius: 5px;
+}
