@@ -25,6 +25,10 @@ header.sticky nav ul li a {
     transition: all .3s ease-in-out;
 }
 
+header.sticky nav ul li a::before {
+    background-color: #fff;
+}
+
 .logo {
     width: 100px;
     padding: 10px;
