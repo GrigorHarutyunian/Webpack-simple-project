@@ -6,9 +6,12 @@ import { createGameSection } from "./game/createGameSection";
 import { createContactsSection } from "./contacts/createContactsSection";
 import { createAboutUsSection } from "./about-us/createAboutUsSection";
 import { createFooter } from "./footer/createFooter";
+import { burgerMenu, activeLink} from "./header/burgerAndActiveLink";
+import { stickyHeader } from "./header/sticky";
 import "../src/style.css";
 import "./header/headerStyle.css";
 import "./hero/heroStyle.css";
+
 const root = document.getElementById("root");
 
 const main = createMain({ element: "main", className: "main" });
@@ -30,3 +33,10 @@ main.append(
 root.append(createHeader({ element: "header", content: "div" }));
 root.append(main);
 root.append(createFooter({ element: "footer", className: "footer" }));
+
+burgerMenu();
+activeLink();
+
+window.onscroll = function() {
+  stickyHeader();
+}

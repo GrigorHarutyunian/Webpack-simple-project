@@ -22,20 +22,28 @@ body {
     height: 100%;
     overflow-x: hidden;
 }
- 
- #root{
-    background: rgb(237, 237, 242);
-    margin: -7px;
-    min-height: 1500px;
-    display: grid;
-    grid-template-rows: 0.5fr 7fr 0.5fr;
+
+body.disabled {
+    overflow-y: hidden;
 }
 
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px; 
+}
+ 
+#root {
+    background: rgb(237, 237, 242);
+    min-height: 100vh;
+    display: grid;
+    /* grid-template-rows: 0.5fr 7fr 0.5fr; */
+}
 
-.footer{
+.footer {
     background: grey;
 }
 
-.main{
+.main {
     background: blanchedalmond;
 }
