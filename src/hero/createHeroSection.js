@@ -1,8 +1,8 @@
 export function createHeroSection({ element, className }) {
   const hero = document.createElement(element);
   hero.setAttribute("class", "hero");
-  hero.append(createHeroImg({ element: "div", className: "heroImg" }));
-  hero.append(createHeroContent({ element: "div", className: "heroContent" }));
+  hero.append(createHeroImg({ element: "div", className: "hero_image" }));
+  hero.append(createHeroContent({ element: "div", className: "hero_content" }));
   return hero;
 }
 
@@ -12,7 +12,7 @@ function createHeroImg({ element, className }) {
   const img = document.createElement("img");
   img.alt = "Aquarium";
   img.title = "Aquarium";
-  img.src = "./images/hero_image.webp";
+  img.src = "../src/images/hero_image.webp";
   const gradient = document.createElement("div");
   gradient.setAttribute("class", "gradient");
   heroImg.append(img, gradient);
@@ -24,7 +24,7 @@ function createHeroContent({ element, className }) {
   heroContent.setAttribute("class", className);
 
   const conteiner = document.createElement("div");
-  conteiner.setAttribute("class", "conteiner");
+  conteiner.setAttribute("class", "container");
   const h1 = document.createElement("h1");
   h1.innerText = "AQUASQAPE";
   const p = document.createElement("p");
