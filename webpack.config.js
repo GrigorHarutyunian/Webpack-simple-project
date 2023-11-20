@@ -26,17 +26,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        test: /\.(png|jpe?g|gif|svg)$/i,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
-              name: '[name].[ext]',
-              outputPath: 'images/', // Path where images will be stored
-              publicPath: 'images/' // Public URL address of the output directory
-            }
-          }
-        ]
+              limit: 8192,
+              name: 'images/[name].[ext]',
+            },
+          },
+        ],
       },
       
       {

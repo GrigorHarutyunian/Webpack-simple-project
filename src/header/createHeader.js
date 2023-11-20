@@ -1,3 +1,5 @@
+import logo from '../images/logo.png';
+
 export function createHeader({ element, content }) {
   const header = document.createElement(element);
   header.setAttribute('id', 'header')
@@ -34,7 +36,7 @@ function createHeaderLogo({ element, content }) {
   logoA.title = "Aquarium";
   const logoImg = document.createElement("img");
   logoImg.alt = "Aquarium Logo";
-  logoImg.src = "../src/images/logo.png";
+  logoImg.src = logo;
   logoA.append(logoImg);
   headerLogo.append(logoA);
   return headerLogo;

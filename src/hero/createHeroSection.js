@@ -1,3 +1,5 @@
+import heroImage from '../images/hero_image.jpg';
+
 export function createHeroSection({ element, className }) {
   const hero = document.createElement(element);
   hero.setAttribute("class", "hero");
@@ -12,7 +14,7 @@ function createHeroImg({ element, className }) {
   const img = document.createElement("img");
   img.alt = "Aquarium";
   img.title = "Aquarium";
-  img.src = "../src/images/hero_image.jpg";
+  img.src = heroImage;
   const gradient = document.createElement("div");
   gradient.setAttribute("class", "gradient");
   heroImg.append(img, gradient);

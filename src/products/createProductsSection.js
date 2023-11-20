@@ -1,3 +1,11 @@
+import guppy from './productsImages/guppy.jpg';
+import gourami from './productsImages/gourami.jpg';
+import angelfish from './productsImages/angelfish.jpg';
+import molly from './productsImages/molly.jpg';
+import cichlids from './productsImages/cichlids.jpg';
+import neon_tetra from './productsImages/neon_tetra.jpg';
+import oceanFloor from './productsImages/background.jpg';
+
 export function createProductsSection({ element, className }) {
   const productsSection = document.createElement(element);
   productsSection.setAttribute("class", className);
@@ -21,7 +29,7 @@ function productsData() {
       'name': 'Guppy',
       'description': `The guppy, also known as millionfish or the rainbow fish, is one of the world's most widely distributed tropical fish.`,
       'price': '20$',
-      'image': '../src/products/productsImages/guppy.jpg',
+      'image': guppy,
     },
 
     {
@@ -29,7 +37,7 @@ function productsData() {
       'name': 'Gourami',
       'description': `Gouramis, or gouramies, are a group of freshwater anabantiform fish that comprise the family Osphronemidae.`,
       'price': '20$',
-      'image': '../src/products/productsImages/gourami.jpg',
+      'image': gourami,
     },
 
     {
@@ -37,7 +45,7 @@ function productsData() {
       'name': 'Angelfish',
       'description': `Pterophyllum is a small genus of freshwater fish from the family Cichlidae known to most aquarists as angelfish.`,
       'price': '35$',
-      'image': '../src/products/productsImages/angelfish.jpg',
+      'image': angelfish,
     },
 
     {
@@ -45,7 +53,7 @@ function productsData() {
       'name': 'Molly',
       'description': `They come in many colors, which makes them attractive to home hobbyists and professional breeders alike.`,
       'price': '20$',
-      'image': '../src/products/productsImages/molly.jpg',
+      'image': molly,
     },
 
     {
@@ -53,7 +61,7 @@ function productsData() {
       'name': 'Cichlids',
       'description': `Cichlids are fish from the family Cichlidae in the order Cichliformes.`,
       'price': '25$',
-      'image': '../src/products/productsImages/cichlids.jpg',
+      'image': cichlids,
     },
 
     {
@@ -61,7 +69,7 @@ function productsData() {
       'name': 'Neon tetra',
       'description': `The neon tetra is a Freshwater fish of the characin family of order Characiformes.`,
       'price': '20$',
-      'image': '../src/products/productsImages/neon_tetra.jpg',
+      'image': neon_tetra,
     },
   ];
 
