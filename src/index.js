@@ -11,6 +11,7 @@ import { stickyHeader } from "./header/sticky";
 import "../src/style.css";
 import "./header/headerStyle.css";
 import "./hero/heroStyle.css";
+import "./products/productsStyle.css";
 
 const root = document.getElementById("root");
 

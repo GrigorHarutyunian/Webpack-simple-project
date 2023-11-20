@@ -12,7 +12,7 @@ function createHeroImg({ element, className }) {
   const img = document.createElement("img");
   img.alt = "Aquarium";
   img.title = "Aquarium";
-  img.src = "../src/images/hero_image.webp";
+  img.src = "../src/images/hero_image.jpg";
   const gradient = document.createElement("div");
   gradient.setAttribute("class", "gradient");
   heroImg.append(img, gradient);
