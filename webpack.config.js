@@ -26,6 +26,20 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/', // Path where images will be stored
+              publicPath: 'images/' // Public URL address of the output directory
+            }
+          }
+        ]
+      },
+      
+      {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
