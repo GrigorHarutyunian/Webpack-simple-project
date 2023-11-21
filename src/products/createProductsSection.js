@@ -4,7 +4,7 @@ import angelfish from './productsImages/angelfish.jpg';
 import molly from './productsImages/molly.jpg';
 import cichlids from './productsImages/cichlids.jpg';
 import neon_tetra from './productsImages/neon_tetra.jpg';
-import oceanFloor from './productsImages/background.jpg';
+
 
 export function createProductsSection({ element, className }) {
   const productsSection = document.createElement(element);
