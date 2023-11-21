@@ -16,6 +16,7 @@ import "./header/headerStyle.css";
 import "./hero/heroStyle.css";
 import "./products/productsStyle.css";
 import "./contacts/contactsStyle.css";
+import "./footer/footerStyle.css";
 
 const root = document.getElementById("root");
 export const validationObject = {
