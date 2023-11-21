@@ -1,6 +1,5 @@
 import checkImg from "./conctactsIMG/kisspng-check-mark-x-mark-clip-art-check-marks-5a7c0970903068.7393423315180783205906.png";
 import xmark from "./conctactsIMG/kisspng-red-x-x-mark-computer-icons-clip-art-red-x-png-5ab19106316800.2072037015215864382024.png";
-import { validationObject } from "../index.js";
 export function inputChange(obj) {
   let value = "";
   const inputs = document.querySelectorAll("input");
@@ -177,21 +176,54 @@ function isValideNumber(value) {
   }
 }
 
-export function buttonOnclick() {
-  const sendButton = document.querySelector(".but");
+export function buttonOnclick(evt, validationObject) {
+  const img1 = document.createElement("img");
+  img1.style.width = "30px";
+  img1.style.height = "20px";
+  evt.preventDefault();
+  for (let key in validationObject) {
+    if (!validationObject[key]) {
+      img1.src = xmark;
+      evt.target.innerText = "";
+      evt.target.style.background = "black";
+      evt.target.append(img1);
+      cleareAllWritens();
 
-  let res = "No";
-  sendButton.addEventListener("click", (evt) => {
-    evt.preventDefault();
-    for (let key in validationObject) {
-      if (!validationObject[key]) {
-        sendButton.innerText = "X";
-      }
+      return;
     }
-    sendButton.innerText = "V";
-    const inputs = document.querySelectorAll("input");
-    inputs.forEach((val) => {
-      val.value = "";
-    });
+  }
+  img1.src = checkImg;
+  evt.target.innerText = "";
+  evt.target.style.backround = "#3498db";
+  evt.target.append(img1);
+  cleareAllWritens();
+
+  return;
+}
+
+function cleareAllWritens() {
+  const sendButton = document.querySelector(".but");
+  const inputs = document.querySelectorAll("input");
+  const textarea = document.querySelector("textarea");
+  const privateDivTextArea = document.querySelector(".privateDivTextArea");
+
+  inputs.forEach((val, i) => {
+    const privateDiv = document.getElementById(`privateDiv${i}`);
+    privateDiv.style.display = "none";
+    val.value = "";
   });
+  privateDivTextArea.style.display = "none";
+
+  setTimeout(() => {
+    sendButton.innerText = "Send";
+    sendButton.style.background = "#3498db";
+    sendButton.addEventListener("mouseenter", function () {
+      sendButton.style.backgroundColor = "#2980b9";
+    });
+    sendButton.addEventListener("mouseleave", function () {
+      sendButton.style.backgroundColor = "#3498db";
+    });
+  }, 2000);
+
+  textarea.value = "";
 }
