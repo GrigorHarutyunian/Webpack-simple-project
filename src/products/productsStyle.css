@@ -1,6 +1,6 @@
 .productsSection {
     min-height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(50, 50, 50, .8)), url('https://media.baamboozle.com/uploads/images/40527/1588838542_811142');
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(50, 50, 50, .8)), url('./productsImages/background.jpg');
     display: flex;
     justify-content: center;
     align-items: center;
