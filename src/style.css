@@ -38,11 +38,6 @@ body.disabled {
     background: rgb(237, 237, 242);
     min-height: 100vh;
     display: grid;
-    /* grid-template-rows: 0.5fr 7fr 0.5fr; */
-}
-
-.footer {
-    background: grey;
 }
 
 .main {
