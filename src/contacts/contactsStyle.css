@@ -1,0 +1,126 @@
+.contactsSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background: aqua;
+  }
+  .formContent {
+    display: flex;
+    background: rgb(98 68 68 / 30%);
+    width: 90%;
+    height: 70%;
+    border-radius: 14px;
+  }
+  
+  .formsParent {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  input {
+    width: 30%;
+    height: 34px;
+    margin: 15px;
+    background: none;
+    border: none;
+    border-bottom: solid white 2px;
+    outline: none;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  input:hover::placeholder {
+    transform: translateY(-12px);
+    color: red;
+  }
+  input::placeholder {
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    transition: transform 0.3s ease;
+  }
+  .textareaDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  textarea {
+    width: 50%;
+    background: none;
+    border: none;
+    border-bottom: solid white 2px;
+    columns: white;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    min-width: 60%;
+    min-height: 50px;
+    max-width: 50%;
+    max-height: 50px;
+    margin-top: 20px;
+    outline: none;
+  }
+  
+  textarea::placeholder {
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    transition: transform 0.3s ease;
+  }
+  textarea:hover::placeholder {
+    transform: translateY(-9px);
+    color: red;
+  }
+  
+  button{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db; /* Blue color, you can adjust this */
+    color: #fff; /* White text */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    color: #fff; /* White text on hover */
+  }
+  
+  .descriptions {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .textInfosDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .textInfo p {
+    font-size: 14px;
+    margin: 23px;
+  }
+  .a {
+    display: flex;
+  }
+  
+  .webSites {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  

@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Verdana, Tahoma, sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body.disabled {
+    overflow-y: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding: 20px; 
+}
+ 
+#root {
+    background: rgb(237, 237, 242);
+    min-height: 100vh;
+    display: grid;
+    /* grid-template-rows: 0.5fr 7fr 0.5fr; */
+}
+
+.footer {
+    background: grey;
+}
+
+.main {
+    background: blanchedalmond;
+}
