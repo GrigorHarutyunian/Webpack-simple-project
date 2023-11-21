@@ -1,4 +1,5 @@
 import logo from '../images/logo.png';
+import loading from '../images/loading.gif';
 
 export function createHeader({ element, content }) {
   const header = document.createElement(element);
@@ -60,4 +61,20 @@ function createNavBar({ element, content }) {
     ul.append(li);
   }
   return nav;
+}
+
+export function createLoading() {
+  const loadingSection = document.createElement('div');
+  loadingSection.setAttribute('class', 'loading');
+  const loadingImage = document.createElement('img');
+  loadingImage.setAttribute('src', loading);
+  loadingSection.append(loadingImage);
+  document.body.prepend(loadingSection);
+
+}
+
+export function load() {
+  const load = document.querySelector(".loading");
+  document.body.style.overflowY = 'scroll';
+  load.style.display = "none";
 }

@@ -1,4 +1,4 @@
-import { createHeader } from "./header/createHeader";
+import { createHeader, createLoading, load } from "./header/createHeader";
 import { createMain } from "./main/createMain";
 import { createHeroSection } from "./hero/createHeroSection";
 import { createProductsSection } from "./products/createProductsSection";
@@ -36,7 +36,12 @@ root.append(createFooter({ element: "footer", className: "footer" }));
 
 burgerMenu();
 activeLink();
+createLoading();
 
 window.onscroll = function () {
   stickyHeader();
+};
+
+window.onload = function () {
+  setTimeout(load, 1000);
 };
