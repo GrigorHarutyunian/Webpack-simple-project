@@ -6,7 +6,6 @@ import { createGameSection } from "./game/createGameSection";
 import { createContactsSection } from "./contacts/createContactsSection";
 import { inputChange } from "./contacts/inputsChanges";
 import { textareaChange } from "./contacts/inputsChanges";
-import { buttonOnclick } from "./contacts/inputsChanges";
 import { createAboutUsSection } from "./about-us/createAboutUsSection";
 import { createFooter } from "./footer/createFooter";
 import { burgerMenu, activeLink } from "./header/burgerAndActiveLink";
@@ -17,8 +16,6 @@ import "./hero/heroStyle.css";
 import "./products/productsStyle.css";
 import "./contacts/contactsStyle.css";
 import "./footer/footerStyle.css";
-
-const root = document.getElementById("root");
 export const validationObject = {
   name: false,
   lastname: false,
@@ -26,6 +23,8 @@ export const validationObject = {
   phoneNumber: false,
   text: false,
 };
+const root = document.getElementById("root");
+
 const main = createMain({ element: "main", className: "main" });
 main.append(createHeroSection({ element: "section", className: "hero" }));
 main.append(
@@ -58,4 +57,3 @@ window.onload = function () {
 
 inputChange(validationObject);
 textareaChange(validationObject);
-buttonOnclick();

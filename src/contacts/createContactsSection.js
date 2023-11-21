@@ -1,3 +1,6 @@
+import { buttonOnclick } from "./inputsChanges";
+import { validationObject } from "../index.js";
+
 export function createContactsSection({ element, content }) {
   const contactsSection = document.createElement(element);
   contactsSection.setAttribute("class", "contactsSection");
@@ -58,10 +61,15 @@ function createContactUs({ element, content }) {
   const button = document.createElement("button");
   button.setAttribute("class", "but");
   button.innerText = "Send";
+  button.addEventListener("click", (evt) =>
+    buttonOnclick(evt, validationObject)
+  );
   textareasDiv.append(privateDivTextarea, textarea, button);
-
+  const privateDivResolve = document.createElement("div");
+  privateDivResolve.setAttribute("class", "privateResolve");
   form.append(textareasDiv);
   formsParent.append(form);
+  formsParent.append(privateDivResolve);
   return formsParent;
 }
 
