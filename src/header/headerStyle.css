@@ -10,10 +10,10 @@ header.sticky {
     transition: all .3s ease-in-out;
 }
 
-header.sticky .logo{
+header.sticky .logo {
     width: 55px;
     transition: all .3s ease-in-out;
-} 
+}
 
 header.sticky .container {
     padding: 0 5px 0 5px !important;
@@ -158,7 +158,7 @@ nav.active {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 50;
 }
 
 .loading img {
