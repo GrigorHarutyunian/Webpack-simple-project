@@ -5,6 +5,7 @@ export function inputChange(obj) {
   const inputs = document.querySelectorAll("input");
   inputs.forEach((val, i) => {
     val.addEventListener("input", (evt) => {
+      console.log(val.value);
       const privateDiv = document.getElementById(`privateDiv${i}`);
       value = evt.target.value;
       if (value !== "") {
@@ -98,6 +99,11 @@ function isValideName(value) {
       obj.message = "please first letter write in capital";
       obj.label = false;
       return obj;
+    }
+    if (value.length < 3) {
+      obj.message = "very short name";
+      obj.label = false;
+      return obj;
     } else {
       for (let x = 1; x < value.length; x++) {
         if (!(value[x].charCodeAt() >= 97 && value[x].charCodeAt() <= 122)) {
@@ -107,6 +113,13 @@ function isValideName(value) {
         }
       }
     }
+
+    if (value.length > 24) {
+      obj.message = "very long name";
+      obj.label = false;
+      return obj;
+    }
+
     obj.message = "valid name";
     obj.label = true;
     return obj;
@@ -177,10 +190,29 @@ function isValideNumber(value) {
 }
 
 export function buttonOnclick(evt, validationObject) {
+  evt.preventDefault();
   const img1 = document.createElement("img");
   img1.style.width = "30px";
   img1.style.height = "20px";
-  evt.preventDefault();
+  const inputs = document.querySelectorAll("input");
+  const textar = document.querySelector("textarea");
+  const emptiVals = [];
+  inputs.forEach((inp) => {
+    if (inp.value === "") {
+      emptiVals.push(1);
+    }
+  });
+
+  if (emptiVals.length > 0 || textar.value === "") {
+    console.log(textar.value);
+    img1.src = xmark;
+    evt.target.innerText = "";
+    evt.target.style.background = "black";
+    evt.target.append(img1);
+    cleareAllWritens();
+
+    return;
+  }
   for (let key in validationObject) {
     if (!validationObject[key]) {
       img1.src = xmark;
@@ -188,7 +220,7 @@ export function buttonOnclick(evt, validationObject) {
       evt.target.style.background = "black";
       evt.target.append(img1);
       cleareAllWritens();
-
+      console.log(validationObject);
       return;
     }
   }
@@ -212,6 +244,7 @@ function cleareAllWritens() {
     privateDiv.style.display = "none";
     val.value = "";
   });
+  textarea.value = "";
   privateDivTextArea.style.display = "none";
 
   setTimeout(() => {
