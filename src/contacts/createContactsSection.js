@@ -1,5 +1,6 @@
 import { buttonOnclick } from "./inputsChanges";
 import { validationObject } from "../index.js";
+import logoImg from "../images/logo.png";
 
 export function createContactsSection({ element, content }) {
   const contactsSection = document.createElement(element);
@@ -18,7 +19,7 @@ function createContactUs({ element, content }) {
   const formsParent = document.createElement(element);
   formsParent.setAttribute("class", "formsParent");
   const h1 = document.createElement("h1");
-  h1.innerText = "Contact US Form";
+  h1.innerText = "Contact Us";
   formsParent.append(h1);
   const form = document.createElement(content);
 
@@ -83,28 +84,40 @@ function createOurDescriptions({ element, className }) {
   descriptionsParent.append(textInfo);
 
   const h1 = document.createElement("h1");
-  h1.innerText = "Our Info";
+  h1.innerText = "Info About Us";
   textInfo.append(h1);
   const textarr = [
     "Elm Street Anytown, USA ",
     "+(555) 123-4567",
     `We are open from Monday to Friday,${" ժn"} 9:00 AM to 5:00 PM.`,
   ];
-
+  const infoImg = [
+    "fa-solid fa-location-dot",
+    "fa-solid fa-phone",
+    "fa-solid fa-envelope",
+  ];
   for (let x = 0; x < textarr.length; x++) {
     const div = document.createElement("div");
     div.setAttribute("class", "textInfosDiv");
-    const img = document.createElement("img");
+    const img = document.createElement("i");
+    img.setAttribute("class", infoImg[x]);
     const p = document.createElement("p");
     p.innerText = textarr[x];
     div.append(img, p);
     textInfo.append(div);
   }
-  const sitesLogo = ["1", "2", "3", "4"];
+  const sitesLogo = [
+    "fa-brands fa-facebook fa-bounce",
+    "fa-brands fa-instagram fa-bounce",
+    "fa-brands fa-twitter fa-bounce",
+    "fa-brands fa-tiktok fa-bounce",
+  ];
   for (let x = 0; x < sitesLogo.length; x++) {
-    const p = document.createElement("p");
-    p.innerText = sitesLogo[x];
-    webSites.append(p);
+    const a = document.createElement("a");
+    const i = document.createElement("i");
+    i.setAttribute("class", sitesLogo[x]);
+    a.append(i);
+    webSites.append(a);
   }
   textInfo.append(webSites);
   return descriptionsParent;
