@@ -1,5 +1,6 @@
 import logo from '../images/logo.png';
 import loading from '../images/loading.gif';
+import clickHandler from '../footer/createFooter';
 
 export function createHeader({ element, content }) {
   const header = document.createElement(element);
@@ -32,7 +33,8 @@ function createHeaderLogo({ element, content }) {
   const headerLogo = document.createElement(element);
   headerLogo.setAttribute("class", "logo");
   const logoA = document.createElement(content);
-  logoA.href = "#";
+  logoA.href = "#header";
+  logoA.addEventListener("click", clickHandler);
   logoA.alt = "Aquariums";
   logoA.title = "Aquarium";
   const logoImg = document.createElement("img");
