@@ -4,8 +4,6 @@ import { createHeroSection } from "./hero/createHeroSection";
 import { createProductsSection } from "./products/createProductsSection";
 import { createGameSection } from "./game/createGameSection";
 import { createContactsSection } from "./contacts/createContactsSection";
-import { inputChange } from "./contacts/inputsChanges";
-import { textareaChange } from "./contacts/inputsChanges";
 import { createAboutUsSection } from "./about-us/createAboutUsSection";
 import { createFooter } from "./footer/createFooter";
 import { burgerMenu, activeLink } from "./header/burgerAndActiveLink";
@@ -17,13 +15,7 @@ import "./products/productsStyle.css";
 import "./game/gameStyle.css";
 import "./contacts/contactsStyle.css";
 import "./footer/footerStyle.css";
-export const validationObject = {
-  name: false,
-  lastname: false,
-  email: false,
-  phoneNumber: false,
-  text: false,
-};
+
 const root = document.getElementById("root");
 
 const main = createMain({ element: "main", className: "main" });
@@ -55,6 +47,3 @@ window.onscroll = function () {
 window.onload = function () {
   setTimeout(load, 1000);
 };
-
-inputChange(validationObject);
-textareaChange(validationObject);
