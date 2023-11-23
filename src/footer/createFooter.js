@@ -99,6 +99,7 @@ function createFooterColumn(e, content) {
     const { itemTitle, itemHref } = textContent[li];
     const footerColumnListItem = createElement('li', 'footer_column_list_item');
     const footerColumnListItemLink = createLinkElement(itemHref, itemTitle);
+    footerColumnListItemLink.addEventListener("click", clickHandler);
     footerColumnListItem.append(footerColumnListItemLink);
     footerColumnList.append(footerColumnListItem);
   }
@@ -113,7 +114,8 @@ function creteFooterLogoColumn(src) {
   const logoColumn = createElement('div', 'footer_column');
   const logo = createElement('div', 'logo') 
   const link = createElement('a');
-  link.setAttribute('href', '#');
+  link.setAttribute('href', '#header');
+  link.addEventListener("click", clickHandler);
   const logoPng = createImageElement(src);
   link.append(logoPng);
   logo.append(link);
@@ -163,27 +165,27 @@ function getFooterColumnsData() {
       'textContent': [
         {
           'itemTitle': 'Home',
-          'itemHref': '#',
+          'itemHref': '#header',
         },
 
         {
           'itemTitle': 'Products',
-          'itemHref': '#',
+          'itemHref': '#products',
         },
 
         {
           'itemTitle': 'Game',
-          'itemHref': '#',
+          'itemHref': '#game',
         },
 
         {
           'itemTitle': 'Contacts',
-          'itemHref': '#',
+          'itemHref': '#contacts',
         },
 
         {
           'itemTitle': 'About',
-          'itemHref': '#',
+          'itemHref': '#aboutUs',
         },
       ] 
     },
@@ -193,27 +195,27 @@ function getFooterColumnsData() {
       'textContent': [
         {
           'itemTitle': 'Guppy',
-          'itemHref': '#',
+          'itemHref': '#products',
         },
 
         {
           'itemTitle': 'Gourami',
-          'itemHref': '#',
+          'itemHref': '#products',
         },
 
         {
           'itemTitle': 'Angelfish',
-          'itemHref': '#',
+          'itemHref': '#products',
         },
 
         {
           'itemTitle': 'Molly',
-          'itemHref': '#',
+          'itemHref': '#products',
         },
 
         {
           'itemTitle': 'Cichlids',
-          'itemHref': '#',
+          'itemHref': '#products',
         },
       ] 
     },
@@ -262,15 +264,15 @@ export function smoothScroll() {
 
   topButton.addEventListener("click", clickHandler);
   heroButton.addEventListener("click", clickHandler);
+}
 
-  function clickHandler(e) {
-    e.preventDefault();
-    const href = this.getAttribute("href");
-    const offsetTop = document.querySelector(href).offsetTop;
+export default function clickHandler(e) {
+  e.preventDefault();
+  const href = this.getAttribute("href");
+  const offsetTop = document.querySelector(href).offsetTop;
 
-    scroll({
-      top: offsetTop,
-      behavior: "smooth",
-    });
-  }
+  scroll({
+    top: offsetTop,
+    behavior: "smooth",
+  });
 }
