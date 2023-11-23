@@ -6,8 +6,9 @@ import { createGameSection } from "./game/createGameSection";
 import { createContactsSection } from "./contacts/createContactsSection";
 import { createAboutUsSection } from "./about-us/createAboutUsSection";
 import { createFooter } from "./footer/createFooter";
-import { burgerMenu, activeLink } from "./header/burgerAndActiveLink";
+import { burgerMenu, activeLink, activeLinkByScroll } from "./header/burgerAndActiveLink";
 import { stickyHeader } from "./header/sticky";
+import { smoothScroll, tapToTop } from './footer/createFooter';
 import "../src/style.css";
 import "./header/headerStyle.css";
 import "./hero/heroStyle.css";
@@ -39,9 +40,12 @@ root.append(createFooter({ element: "footer", className: "footer" }));
 burgerMenu();
 activeLink();
 createLoading();
+smoothScroll();
 
 window.onscroll = function () {
   stickyHeader();
+  tapToTop();
+  activeLinkByScroll();
 };
 
 window.onload = function () {

@@ -13,6 +13,7 @@ const validationObject = {
 export function createContactsSection({ element, content }) {
   const contactsSection = document.createElement(element);
   contactsSection.setAttribute("class", "contactsSection");
+  contactsSection.setAttribute("id", "contacts");
   const contactsContent = document.createElement(content);
   contactsContent.setAttribute("class", "formContent");
   contactsContent.append(createContactUs({ element: "div", content: "form" }));
