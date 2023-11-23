@@ -1,6 +1,14 @@
 import { buttonOnclick } from "./inputsChanges";
-import { validationObject } from "../index.js";
-import logoImg from "../images/logo.png";
+import { inputChange } from "./inputsChanges";
+import { textareaChange } from "./inputsChanges";
+
+const validationObject = {
+  name: false,
+  lastname: false,
+  email: false,
+  phoneNumber: false,
+  text: false,
+};
 
 export function createContactsSection({ element, content }) {
   const contactsSection = document.createElement(element);
@@ -89,7 +97,7 @@ function createOurDescriptions({ element, className }) {
   const textarr = [
     "Elm Street Anytown, USA ",
     "+(555) 123-4567",
-    `We are open from Monday to Friday,${" ժn"} 9:00 AM to 5:00 PM.`,
+    `We are open from Monday to Friday,${" \n"} 9:00 AM to 5:00 PM.`,
   ];
   const infoImg = [
     "fa-solid fa-location-dot",
@@ -122,3 +130,7 @@ function createOurDescriptions({ element, className }) {
   textInfo.append(webSites);
   return descriptionsParent;
 }
+setTimeout(() => {
+  inputChange(validationObject);
+  textareaChange(validationObject);
+}, 1000);
