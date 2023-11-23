@@ -118,6 +118,29 @@ export function createGameSection({ element, className }) {
     fishWhole.appendChild(fishBody2);
     fishBody.appendChild(fishWhole);
 
+    // Add click event listener to the fish element
+    fishBody.addEventListener('click', function (event) {
+      const fishOffsetLeft = this.offsetLeft;
+      const aquariumOffsetLeft = outerWrapper.offsetLeft;
+      const aquariumWidth = outerWrapper.clientWidth;
+      const fishWidth = this.clientWidth;
+
+      const minLeftCoordinate = aquariumOffsetLeft;
+      const maxLeftCoordinate = aquariumWidth - fishWidth;
+      const leftCoordinate = Math.floor(Math.random() * (maxLeftCoordinate - minLeftCoordinate + 1)) + minLeftCoordinate / 2;
+
+      if (fishOffsetLeft > leftCoordinate) {
+        // If the fish is moving to the left
+        this.style.transform = 'rotateY(180deg)';
+      } else {
+        // If the fish is moving to the right
+        this.style.transform = 'rotateY(0)';
+      }
+
+      this.style.left = leftCoordinate + 'px';
+      this.style.top = Math.floor(Math.random() * (outerWrapper.clientHeight - this.clientHeight)) + 'px';
+    });
+
     return fishBody;
   }
 
