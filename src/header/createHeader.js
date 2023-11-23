@@ -44,19 +44,25 @@ function createHeaderLogo({ element, content }) {
 }
 
 function createNavBar({ element, content }) {
-  const arrNav = ["Home", "Products", "Game", "Contacts", "About Us"];
+  const arrNav = {
+    "Home": "#header",
+    "Products": "#products",
+    "Game": "#game",
+    "Contacts": "#contacts",
+    "About Us": "#aboutUs",
+  };
   const nav = document.createElement(element);
   nav.setAttribute("class", "headerNavBar");
   nav.setAttribute('id', 'nav');
   const ul = document.createElement(content);
   ul.setAttribute("class", "ulInNavHeader");
   nav.append(ul);
-  for (let x = 0; x < 5; x++) {
+  for (let x in arrNav) {
     const li = document.createElement("li");
     const a = document.createElement("a");
     a.setAttribute("class", "headerListA");
-    a.href = "#";
-    a.innerText = arrNav[x];
+    a.href = arrNav[x];
+    a.innerText = x;
     li.append(a);
     ul.append(li);
   }

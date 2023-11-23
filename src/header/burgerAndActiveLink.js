@@ -19,3 +19,25 @@ export function activeLink() {
         });
     });
 }
+
+export function activeLinkByScroll() {
+    const menuItems = document.querySelectorAll('nav ul li a');
+    
+    for (let link = 0; link < menuItems.length; ++link) {
+        const sectionName = menuItems[link].href.split("/");
+        const sectionId = sectionName.pop();
+        const section = document.querySelector(sectionId);
+        const sectionOffsetTop = section.offsetTop;
+        const sectionOffsetHeight = section.offsetHeight;
+        const activeLink = document.querySelector('.activeLink');
+
+        if (window.pageYOffset >= sectionOffsetTop - 350 && window.pageYOffset <= sectionOffsetTop + sectionOffsetHeight) {
+
+            if (activeLink) {
+                activeLink.classList.remove('activeLink');
+            }
+
+            menuItems[link].classList.add('activeLink');
+        }
+    }
+}
