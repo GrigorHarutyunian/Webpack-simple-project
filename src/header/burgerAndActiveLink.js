@@ -1,11 +1,20 @@
 export function burgerMenu() {
+    const nav = document.getElementById('nav');
+    const body = document.body;
+
     document.getElementById('burgerMenu').addEventListener('click', () => {
-        const nav = document.getElementById('nav');
-        const body = document.body;
         nav.classList.toggle('active');
         body.classList.toggle('disabled');
         body.classList.toggle('burger_menu');
-  })  
+    });
+
+    document.querySelectorAll('nav ul li a').forEach(e => {
+        e.addEventListener('click', () => {
+            nav.classList.remove('active');
+            body.classList.remove('disabled');
+            body.classList.remove('burger_menu');
+        });
+    })
 }
 
 export function activeLink() {
