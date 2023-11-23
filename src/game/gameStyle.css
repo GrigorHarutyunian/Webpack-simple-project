@@ -243,6 +243,12 @@
     width: 190px;
     height: 100px;
     margin: auto;
+    cursor: grab;
+    transition: all 1s ease-in-out;
+}
+
+.aquarium__fish-body:hover {
+    transform: scale(1.1);
 }
 
 .aquarium__fish-whole {
