@@ -14,7 +14,7 @@ import "../src/style.css";
 import "./header/headerStyle.css";
 import "./hero/heroStyle.css";
 import "./products/productsStyle.css";
-import "./game/gameStyle.css"
+import "./game/gameStyle.css";
 import "./contacts/contactsStyle.css";
 import "./footer/footerStyle.css";
 export const validationObject = {

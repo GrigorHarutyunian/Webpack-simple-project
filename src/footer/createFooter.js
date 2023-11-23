@@ -82,7 +82,8 @@ function createContactsColumn(title, contacts) {
   const companyContactsList = createElement('ul', 'footer_column_list');
   const companyTelItem = createElement('li', 'footer_column_list_item');
   const companyEmailItem = createElement('li', 'footer_column_list_item');
-  const companyTel = createLinkElement(`tel:${tel}`, `<i class="fa-solid fa-phone"></i> ${tel}`);
+  const telHref = tel.replaceAll('(', '').replaceAll(')', '').replaceAll('-', '').replaceAll(' ', '');
+  const companyTel = createLinkElement(`tel:${telHref }`, `<i class="fa-solid fa-phone"></i> ${tel}`);
   const companyEmail = createLinkElement(`mailto:${email}`, `<i class="fa-solid fa-envelope"></i> ${email}`);
   const companyAddress = createElementWithTextContent('li', `<i class="fa-solid fa-location-dot"></i> ${address}`, 'footer_column_list_item');
 
@@ -100,9 +101,9 @@ function createContactsColumn(title, contacts) {
 
 function getContactInfo() {
   const contacts = {
-    'tel': '+374555555',
+    'tel': '+(555) 123-4567',
     'email': 'aquascape@gmail.com',
-    'address': 'Hakob Hakobyan 2',
+    'address': 'Elm Street Anytown, USA',
   };
 
   return contacts;

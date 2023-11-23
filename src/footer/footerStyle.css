@@ -9,7 +9,6 @@ footer .footer_row {
 }
 
 footer .footer_row .footer_column {
-    padding: 10px;
     width: 25%;
 }
 
@@ -30,7 +29,7 @@ footer .footer_row .footer_column ul li,
 footer .footer_row .footer_column ul li a {
     display: block;
     color: #fff;
-    font-size: 17px;
+    font-size: 16px;
 }
 
 footer .footer_row .footer_column ul li:hover > a,
@@ -68,7 +67,7 @@ footer .logo img {
 @media only screen and (max-width: 500px){
     .footer_row .footer_column ul li,
     .footer_row .footer_column ul li a {
-        font-size: 15px !important;
+        font-size: 14px !important;
     }
 }
 
