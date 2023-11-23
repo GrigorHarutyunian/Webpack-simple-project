@@ -102,19 +102,18 @@ input::placeholder {
 }
 
 textarea {
-  width: 50%;
   background: none;
   border: none;
   border-bottom: solid white 2px;
-  columns: white;
   color: white;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   min-width: 200px;
-  min-height: 50px;
+  min-height: 56px;
   max-width: 200px;
-  max-height: 50px;
-  margin-top: 20px;
+  margin-top: 29px;
+  resize: none;
   outline: none;
+  padding-top: 13px;
 }
 
 textarea::placeholder {
