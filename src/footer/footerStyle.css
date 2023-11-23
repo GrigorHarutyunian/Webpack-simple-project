@@ -193,6 +193,16 @@ svg #fish6{
     footer .footer_row .footer_column {
         width: 33%;
     }
+
+    @-webkit-keyframes swim {
+        0% {margin-left: -235px}
+        100% {margin-left: 50%;}
+    }
+    
+    @keyframes swim {
+        0% {margin-left: -235px}
+        100% {margin-left: 50%;}
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -206,10 +216,35 @@ svg #fish6{
     .footer_row .footer_column ul li a {
         font-size: 14px !important;
     }
+
+    @-webkit-keyframes swim {
+        0% {margin-left: -235px}
+        100% {margin-left: 35%;}
+    }
+    
+    @keyframes swim {
+        0% {margin-left: -235px}
+        100% {margin-left: 35%;}
+    }
 }
 
 @media only screen and (max-width: 450px){
     footer .footer_row .footer_column {
         width: 100%;
+    }
+
+    @-webkit-keyframes swim {
+        0% {margin-left: -235px}
+        100% {margin-left: 15%;}
+    }
+    
+    @keyframes swim {
+        0% {margin-left: -235px}
+        100% {margin-left: 15%;}
+    }
+
+    .top_button {
+        right: 15px;
+        bottom: 15px;
     }
 }
