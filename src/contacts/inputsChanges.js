@@ -1,5 +1,6 @@
 import checkImg from "./conctactsIMG/kisspng-check-mark-x-mark-clip-art-check-marks-5a7c0970903068.7393423315180783205906.png";
 import xmark from "./conctactsIMG/kisspng-red-x-x-mark-computer-icons-clip-art-red-x-png-5ab19106316800.2072037015215864382024.png";
+
 export function inputChange(obj) {
   let value = "";
   const inputs = document.querySelectorAll("input");
@@ -194,32 +195,14 @@ export function buttonOnclick(evt, validationObject) {
   const img1 = document.createElement("img");
   img1.style.width = "30px";
   img1.style.height = "20px";
-  const inputs = document.querySelectorAll("input");
-  const textar = document.querySelector("textarea");
-  const emptiVals = [];
-  inputs.forEach((inp) => {
-    if (inp.value === "") {
-      emptiVals.push(1);
-    }
-  });
 
-  if (emptiVals.length > 0 || textar.value === "") {
-    console.log(textar.value);
-    img1.src = xmark;
-    evt.target.innerText = "";
-    evt.target.style.background = "black";
-    evt.target.append(img1);
-    cleareAllWritens();
-
-    return;
-  }
   for (let key in validationObject) {
     if (!validationObject[key]) {
       img1.src = xmark;
       evt.target.innerText = "";
       evt.target.style.background = "black";
       evt.target.append(img1);
-      cleareAllWritens();
+      cleareAllWritens(validationObject);
       console.log(validationObject);
       return;
     }
@@ -228,12 +211,17 @@ export function buttonOnclick(evt, validationObject) {
   evt.target.innerText = "";
   evt.target.style.backround = "#3498db";
   evt.target.append(img1);
-  cleareAllWritens();
+  cleareAllWritens(validationObject);
 
   return;
 }
 
-function cleareAllWritens() {
+function cleareAllWritens(validationObject) {
+  validationObject.name = false;
+  validationObject.lastname = false;
+  validationObject.email = false;
+  validationObject.phoneNumber = false;
+  validationObject.text = false;
   const sendButton = document.querySelector(".but");
   const inputs = document.querySelectorAll("input");
   const textarea = document.querySelector("textarea");
@@ -256,7 +244,7 @@ function cleareAllWritens() {
     sendButton.addEventListener("mouseleave", function () {
       sendButton.style.backgroundColor = "#3498db";
     });
-  }, 2000);
+  }, 1000);
 
   textarea.value = "";
 }
