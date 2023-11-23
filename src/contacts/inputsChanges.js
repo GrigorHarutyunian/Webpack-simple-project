@@ -10,7 +10,7 @@ export function inputChange(obj) {
       const privateDiv = document.getElementById(`privateDiv${i}`);
       value = evt.target.value;
       if (value !== "") {
-        privateDiv.style.display = "block";
+        privateDiv.style.display = "flex";
         const p = document.getElementById(`validateText${i}`);
         const img = document.getElementById(`validateImg${i}`);
         switch (val.id[val.id.length - 1]) {
@@ -78,7 +78,7 @@ export function textareaChange(obj) {
     value = evt.target.value;
     if (value !== "") {
       if (value.length < 6) {
-        privateDivTextAre.style.display = "block";
+        privateDivTextAre.style.display = "flex";
         p.innerText = "write smt longer";
         img.src = xmark;
         obj.text = false;
@@ -200,7 +200,6 @@ export function buttonOnclick(evt, validationObject) {
     if (!validationObject[key]) {
       img1.src = xmark;
       evt.target.innerText = "";
-      evt.target.style.background = "black";
       evt.target.append(img1);
       cleareAllWritens(validationObject);
       console.log(validationObject);
@@ -209,7 +208,7 @@ export function buttonOnclick(evt, validationObject) {
   }
   img1.src = checkImg;
   evt.target.innerText = "";
-  evt.target.style.backround = "#3498db";
+
   evt.target.append(img1);
   cleareAllWritens(validationObject);
 
@@ -237,14 +236,14 @@ function cleareAllWritens(validationObject) {
 
   setTimeout(() => {
     sendButton.innerText = "Send";
-    sendButton.style.background = "#3498db";
+    sendButton.style.background = "#FEC763";
     sendButton.addEventListener("mouseenter", function () {
-      sendButton.style.backgroundColor = "#2980b9";
+      sendButton.style.backgroundColor = "#00207F";
     });
     sendButton.addEventListener("mouseleave", function () {
-      sendButton.style.backgroundColor = "#3498db";
+      sendButton.style.backgroundColor = "#FEC763";
     });
-  }, 1000);
+  }, 2000);
 
   textarea.value = "";
 }
