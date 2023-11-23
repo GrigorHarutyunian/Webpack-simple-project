@@ -30,6 +30,7 @@ function createContactUs({ element, content }) {
   h1.innerText = "Contact Us";
   formsParent.append(h1);
   const form = document.createElement(content);
+  form.setAttribute("autocomplete", "off");
 
   const placeholders = ["Name", "Lastname", "Email", "Phone"];
   for (let x = 0; x < 4; x++) {
