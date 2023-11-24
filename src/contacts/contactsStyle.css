@@ -33,8 +33,8 @@
 .big  div {
   display: flex;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 6px;
+  left: -18px;
   color: #fec763;
   margin-bottom: -26px;
   margin-left: 32px;
@@ -64,14 +64,14 @@
 
 .privateDivTextArea {
   position: absolute;
-  top: -14px;
-  left: -22px;
-  color: #fec763;
-  margin-bottom: -26px;
-  margin-left: 32px;
-  align-self: flex-start;
-  opacity: 1;
-  font-size: 12px;
+    top: 12px;
+    left: -44px;
+    color: #fec763;
+    margin-bottom: -26px;
+    margin-left: 32px;
+    align-self: flex-start;
+    opacity: 1;
+    font-size: 12px;
 }
 
 form {
@@ -90,6 +90,7 @@ input {
   outline: none;
   color: #FEC763;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  cursor: pointer;
 }
 
 input:hover::placeholder {
@@ -123,6 +124,7 @@ textarea {
   resize: none;
   outline: none;
   padding-top: 13px;
+  cursor: pointer;
 }
 
 textarea::placeholder {
@@ -222,21 +224,18 @@ button:hover::before {
   justify-content: space-evenly;
 }
 
-.fa-facebook:before {
-  color: #fec763;
+
+
+.fa-brands, .fab {
+  font-weight: 400;
+  color:#FEC763 ;
 }
 
-.fa-instagram:before {
- color: #FEC763;
-}
-
-.fa-twitter:before {
+.fa-solid, .fas {
+  font-weight: 900;
   color: #FEC763;
 }
 
-.fa-tiktok:before {
-  color: #FEC763;
-}
 
 @media only screen and (max-width: 867px) {
   .formContent {
