@@ -111,11 +111,11 @@ function createFooterColumn(e, content) {
 }
 
 function creteFooterLogoColumn(src) {
+  const currentDomain = window.location.href;
   const logoColumn = createElement('div', 'footer_column');
   const logo = createElement('div', 'logo') 
   const link = createElement('a');
-  link.setAttribute('href', '#header');
-  link.addEventListener("click", clickHandler);
+  link.setAttribute('href', currentDomain);
   const logoPng = createImageElement(src);
   link.append(logoPng);
   logo.append(link);

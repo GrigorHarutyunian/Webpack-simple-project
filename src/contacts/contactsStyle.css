@@ -4,17 +4,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  background-attachment: fixed;
 }
+
 .formContent {
   display: flex;
   background: #00207f94;
   width: 90%;
   height: 90%;
   border-radius: 14px;
+  padding: 20px;
 }
 
-.formContent h1{
+.formContent h1 {
   color: #fec763;
   font-size: 45px;
 }
@@ -26,8 +29,6 @@
   align-items: center;
   width: 60%;
 }
-
-
 
 .big  div {
   display: flex;
@@ -41,6 +42,7 @@
   opacity: 1;
   font-size: 12px;
 }
+
 .big {
   position: relative;
   width: 40%;
@@ -72,8 +74,6 @@
   font-size: 12px;
 }
 
-
-
 form {
   display: flex;
   flex-wrap: wrap;
@@ -91,15 +91,18 @@ input {
   color: #FEC763;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
+
 input:hover::placeholder {
   transform: translateY(-12px);
   color: #fec763;
 }
+
 input::placeholder {
   color: #FEC763;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   transition: transform 0.3s ease;
 }
+
 .textareaDiv {
   display: flex;
   flex-direction: column;
@@ -127,6 +130,7 @@ textarea::placeholder {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   transition: transform 0.3s ease;
 }
+
 textarea:hover::placeholder {
   transform: translateY(-9px);
   color:  #fec763;
@@ -142,7 +146,7 @@ button {
     color: #fff;
     border: none;
     border-radius: 50px;
-    margin-top: 10px;
+    margin-top: 35px;
     text-transform: capitalize;
     font-size: 20px;
     font-weight: 700;
@@ -151,6 +155,7 @@ button {
     visibility: visible;
     z-index: 1;
 }
+
 button:hover {
   background-color:#00207F; 
   color: #fff; 
@@ -172,14 +177,11 @@ button:hover::before {
   height: 100%;
 }
 
-
-
 .privateResolve{
   position: relative;
   top: -31px;
   left: 240px;
 }
-
 
 .descriptions {
   width: 40%;
@@ -203,11 +205,13 @@ button:hover::before {
   flex-direction: column;
   justify-content: space-between;
 }
+
 .textInfo p {
   font-size: 20px;
   margin: 23px;
   color: #fec763;
 }
+
 .a {
   display: flex;
 }
@@ -218,16 +222,66 @@ button:hover::before {
   justify-content: space-evenly;
 }
 
-.fa-facebook:before{
+.fa-facebook:before {
   color: #fec763;
 }
-.fa-instagram:before{
+
+.fa-instagram:before {
  color: #FEC763;
 }
+
 .fa-twitter:before {
   color: #FEC763;
 }
 
 .fa-tiktok:before {
   color: #FEC763;
+}
+
+@media only screen and (max-width: 867px) {
+  .formContent {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .descriptions,
+  .formsParent {
+    width: 100%;
+    margin-top: 35px;
+  }
+
+  .descriptions {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 600px) { 
+  .big,
+  input,
+  textarea,
+  .textareaDiv{
+    width: 100%;
+  }
+  textarea {
+    min-width: unset;
+    max-width: unset;
+  }
+
+  .textInfo {
+    height: auto;
+  }
+
+  .button {
+    width: 50%;
+  }
+
+  .big {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 500px) { 
+  .formContent h1 {
+    font-size: 35px;
+  }
 }

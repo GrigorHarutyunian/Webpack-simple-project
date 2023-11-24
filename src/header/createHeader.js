@@ -33,8 +33,8 @@ function createHeaderLogo({ element, content }) {
   const headerLogo = document.createElement(element);
   headerLogo.setAttribute("class", "logo");
   const logoA = document.createElement(content);
-  logoA.href = "#header";
-  logoA.addEventListener("click", clickHandler);
+  const currentDomain = window.location.href;
+  logoA.href = currentDomain;
   logoA.alt = "Aquariums";
   logoA.title = "Aquarium";
   const logoImg = document.createElement("img");
