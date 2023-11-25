@@ -1,0 +1,24 @@
+.about_us_section {
+    background-color: rgba(254, 199, 99, 0.8); 
+    padding: 40px; 
+    text-align: center;
+    transition: background-color 1s ease, transform 1s ease;
+}
+
+.about_us_content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about_us_title {
+    font-size: 2em;
+    color: #0a0a0a;
+}
+
+.about_us_text,
+.additional_text {
+    font-size: 2em;
+    color: #040404;
+    margin-top: 5px;
+    font-weight: bolder;
+}
