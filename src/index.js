@@ -6,9 +6,13 @@ import { createGameSection } from "./game/createGameSection";
 import { createContactsSection } from "./contacts/createContactsSection";
 import { createAboutUsSection } from "./about-us/createAboutUsSection";
 import { createFooter } from "./footer/createFooter";
-import { burgerMenu, activeLink, activeLinkByScroll } from "./header/burgerAndActiveLink";
+import {
+  burgerMenu,
+  activeLink,
+  activeLinkByScroll,
+} from "./header/burgerAndActiveLink";
 import { stickyHeader } from "./header/sticky";
-import { smoothScroll, tapToTop } from './footer/createFooter';
+import { smoothScroll, tapToTop } from "./footer/createFooter";
 import "../src/style.css";
 import "./header/headerStyle.css";
 import "./hero/heroStyle.css";
@@ -16,7 +20,7 @@ import "./products/productsStyle.css";
 import "./game/gameStyle.css";
 import "./contacts/contactsStyle.css";
 import "./footer/footerStyle.css";
-
+import "./about-us/aboutUsStyle.css";
 const root = document.getElementById("root");
 
 const main = createMain({ element: "main", className: "main" });
