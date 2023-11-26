@@ -14,9 +14,12 @@ export function createAboutUsSection({ element, className }) {
   const h1 = document.createElement("h1");
   h1.innerText = "About Us";
   const h2 = document.createElement("h2");
+  const aboutUsContent = document.createElement('div');
+  aboutUsContent.setAttribute('class', 'aboutUsContent');
+  aboutUsContent.append(createBox(), createButtons());
   h2.innerText =
     "AQUASQAPE Inc. is a company focused on customer’s needs by \n offering a full line of aquatic products as well as design and engineering.";
-  aboutUsSection.append(h1, h2, createBox(), createButtons());
+  aboutUsSection.append(h1, h2, aboutUsContent);
   return aboutUsSection;
 }
 
