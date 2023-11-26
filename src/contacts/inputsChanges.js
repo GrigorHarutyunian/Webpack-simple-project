@@ -140,7 +140,7 @@ function isValideEmail(value) {
   ];
   if (value !== "") {
     for (let addres of mailsArr) {
-      if (value.search(addres) !== -1) {
+      if (!value.startsWith(addres) && value.endsWith(addres)) {
         obj.message = "valid email";
         obj.label = true;
         return obj;

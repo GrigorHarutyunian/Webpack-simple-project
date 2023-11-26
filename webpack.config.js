@@ -27,12 +27,19 @@ module.exports = {
     rules: [
       {
         test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
-      
+      {
+        test: /\.webp$/i,
+        type: "asset",
+      },
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
       },
     ],
   },
