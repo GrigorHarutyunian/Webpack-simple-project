@@ -76,6 +76,12 @@ export function createLoading() {
   loadingSection.setAttribute('class', 'loading');
   const loadingImage = document.createElement('img');
   loadingImage.setAttribute('src', loading);
+  const gradinetBox = document.createElement('div');
+  gradinetBox.setAttribute('class', 'gradientBox');
+  const gradient = document.createElement('div');
+  gradient.setAttribute('class', 'gradient');
+  gradinetBox.append(gradient);
+  loadingSection.append(gradinetBox);
   loadingSection.append(loadingImage);
   document.body.prepend(loadingSection);
 
