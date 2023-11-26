@@ -9,6 +9,7 @@ import neon_tetra from './productsImages/neon_tetra.jpg';
 export function createProductsSection({ element, className }) {
   const productsSection = document.createElement(element);
   productsSection.setAttribute("class", className);
+  productsSection.setAttribute('id', 'products');
   const productsTitle = document.createElement('h3')
   productsTitle.setAttribute('class', 'products_section_title')
   productsTitle.innerText = 'PRODUCTS';

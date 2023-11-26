@@ -19,23 +19,10 @@ body.disabled {
 .hero_content p {
     width: 50%;
     margin: 25px 0 25px 0;
-    color: aqua;
+    color: #fff;
     line-height: 35px;
     font-size: 19px;
     text-shadow: 3px 0px 7px rgba(31, 30, 29, 0.5), -3px 0px 7px rgba(31, 30, 26, 0.5), 0px 4px 7px rgba(28, 27, 23, 0.2);
-}
-
-.hero_content a {
-    background: #fddb7c;
-    width: 300px;
-    display: block;
-    padding: 10px;
-    border-radius: 5px;
-    color: #fff;
-    text-align: center;
-    font-size: 23px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-    transition: .5s ease-in-out;
 }
 
 .hero_content a:hover {
@@ -44,8 +31,8 @@ body.disabled {
 }
 
 .hero_content h1 {
-    color: aqua;
-    font-size: 50px;
+    color: #fff;
+    font-size:  65px;
     text-shadow: 3px 0px 7px rgba(31, 30, 29, 0.3), -3px 0px 7px rgba(31, 30, 26, 0.3), 0px 4px 7px rgba(28, 27, 23, 0.3);
 }
 
@@ -68,33 +55,28 @@ body.disabled {
     position: absolute;
     top: 0;
     left: 0;
-    background-image: linear-gradient(#000046, #1CB5E0);
-    opacity: .2;
+    background-image: linear-gradient(#000, #00207F);
+    opacity: .5;
 } 
 
 @media only screen and (max-width: 1900px) {
     .hero_content h1 {
-        font-size: 39px;
+        font-size: 49px;
     }
 
     .hero_content p {
         font-size: 15px;
         line-height: 25px;
     }
-
-    .hero_content a {
-        font-size: 21px;
-    }
-
 }
 
 @media only screen and (max-width: 1024px) {
-    .hero_content h1 {
-        font-size: 31px;
-    }
-
     .hero_content p {
         line-height: 19px;
+    }
+
+    .logo {
+        width: 75px;
     }
 }
 
@@ -113,6 +95,9 @@ body.disabled {
         flex-direction: column;
     }
 
+    .logo {
+        width: 50px;
+    }
 }
 
 @media only screen and (max-width: 500px){
@@ -122,6 +107,6 @@ body.disabled {
     }
 
     .hero_content h1 {
-        font-size: 28px;
+        font-size: 45px;
     }
 }

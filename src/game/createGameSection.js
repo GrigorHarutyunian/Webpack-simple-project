@@ -6,7 +6,8 @@ import plant4 from '../images/pngegg (4).png';
 export function createGameSection({ element, className }) {
   const gameSection = document.createElement(element);
   gameSection.setAttribute("class", className);
-
+  gameSection.setAttribute('id', 'game');
+  
   const outerWrapper = document.createElement('div');
   outerWrapper.classList.add('aquarium__outer-wrapper');
 

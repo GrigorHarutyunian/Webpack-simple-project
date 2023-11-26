@@ -17,10 +17,11 @@ html {
 }
 
 body {
-    font-family: Verdana, Tahoma, sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     width: 100%;
     height: 100%;
     overflow: hidden;
+    font-size: 18px;
 }
 
 body.disabled {
@@ -41,5 +42,46 @@ body.disabled {
 }
 
 .main {
-    background: blanchedalmond;
+    background: #FEC763
+}
+
+
+.button-1 {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: 15px 29px;
+    background-color: #00207F;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    transition: all .4s ease-in-out;
+    visibility: visible;
+    z-index: 1;
+}
+
+.button-1:hover {
+    border-color: #FEC763;
+    color: #00207F;
+}
+
+.button-1::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #FEC763;
+    transition: all .4s ease-in-out;
+    z-index: -1;
+}
+
+.button-1:hover::before {
+    height: 100%;
 }

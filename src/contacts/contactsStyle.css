@@ -1,16 +1,25 @@
 .contactsSection {
+  background-image: linear-gradient(rgba(0, 0, 0, .5),rgb(0, 32, 127, .5)), url(./conctactsIMG/d21b58c6815291e75629cb251bc0bd09.jpg);
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: aqua;
+  min-height: 100vh;
+  background-attachment: fixed;
 }
+
 .formContent {
   display: flex;
-  background: rgb(98 68 68 / 30%);
+  background: #00207f94;
   width: 90%;
   height: 90%;
   border-radius: 14px;
+  padding: 20px;
+}
+
+.formContent h1 {
+  color: #fec763;
+  font-size: 45px;
 }
 
 .formsParent {
@@ -21,20 +30,19 @@
   width: 60%;
 }
 
-
-
 .big  div {
   display: flex;
   position: absolute;
-  top: 0;
-  left: 0;
-  color: black;
+  top: 6px;
+  left: -18px;
+  color: #fec763;
   margin-bottom: -26px;
   margin-left: 32px;
   align-self: flex-start;
   opacity: 1;
   font-size: 12px;
 }
+
 .big {
   position: relative;
   width: 40%;
@@ -56,17 +64,15 @@
 
 .privateDivTextArea {
   position: absolute;
-  top: -14px;
-  left: -22px;
-  color: black;
-  margin-bottom: -26px;
-  margin-left: 32px;
-  align-self: flex-start;
-  opacity: 1;
-  font-size: 12px;
+    top: 12px;
+    left: -44px;
+    color: #fec763;
+    margin-bottom: -26px;
+    margin-left: 32px;
+    align-self: flex-start;
+    opacity: 1;
+    font-size: 12px;
 }
-
-
 
 form {
   display: flex;
@@ -80,20 +86,24 @@ input {
   border: none;
   width: 80%;
   height: 34px;
-  border-bottom: solid white 2px;
+  border-bottom: solid #FEC763 2px;
   outline: none;
-  color: white;
+  color: #FEC763;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  cursor: pointer;
 }
+
 input:hover::placeholder {
   transform: translateY(-12px);
-  color: red;
+  color: #fec763;
 }
+
 input::placeholder {
-  color: white;
+  color: #FEC763;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   transition: transform 0.3s ease;
 }
+
 .textareaDiv {
   display: flex;
   flex-direction: column;
@@ -104,8 +114,8 @@ input::placeholder {
 textarea {
   background: none;
   border: none;
-  border-bottom: solid white 2px;
-  color: white;
+  border-bottom: solid #FEC763 2px;
+  color: #FEC763;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   min-width: 200px;
   min-height: 56px;
@@ -114,36 +124,59 @@ textarea {
   resize: none;
   outline: none;
   padding-top: 13px;
+  cursor: pointer;
 }
 
 textarea::placeholder {
-  color: white;
+  color: #FEC763;;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   transition: transform 0.3s ease;
 }
+
 textarea:hover::placeholder {
   transform: translateY(-9px);
-  color: red;
+  color:  #fec763;
 }
 
 button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  margin-top: 20px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
-  background-color: #3498db; 
-  color: #fff; 
-  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+    display: inline-flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: 15px 29px;
+    background-color:#FEC763 ;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    margin-top: 35px;
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    transition: all .4s ease-in-out;
+    visibility: visible;
+    z-index: 1;
 }
+
 button:hover {
-  background-color: #2980b9; 
+  background-color:#00207F; 
   color: #fff; 
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #00207F;
+  transition: all .4s ease-in-out;
+  z-index: -1;
+}
+
+button:hover::before {
+  height: 100%;
 }
 
 .privateResolve{
@@ -151,7 +184,6 @@ button:hover {
   top: -31px;
   left: 240px;
 }
-
 
 .descriptions {
   width: 40%;
@@ -175,10 +207,13 @@ button:hover {
   flex-direction: column;
   justify-content: space-between;
 }
+
 .textInfo p {
-  font-size: 14px;
+  font-size: 20px;
   margin: 23px;
+  color: #fec763;
 }
+
 .a {
   display: flex;
 }
@@ -187,4 +222,65 @@ button:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+
+
+.fa-brands, .fab {
+  font-weight: 400;
+  color:#FEC763 ;
+}
+
+.fa-solid, .fas {
+  font-weight: 900;
+  color: #FEC763;
+}
+
+
+@media only screen and (max-width: 867px) {
+  .formContent {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .descriptions,
+  .formsParent {
+    width: 100%;
+    margin-top: 35px;
+  }
+
+  .descriptions {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 600px) { 
+  .big,
+  input,
+  textarea,
+  .textareaDiv{
+    width: 100%;
+  }
+  textarea {
+    min-width: unset;
+    max-width: unset;
+  }
+
+  .textInfo {
+    height: auto;
+  }
+
+  .button {
+    width: 50%;
+  }
+
+  .big {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 500px) { 
+  .formContent h1 {
+    font-size: 35px;
+  }
 }
