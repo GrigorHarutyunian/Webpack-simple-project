@@ -268,6 +268,22 @@
     transition: all .5s ease-in-out;
 }
 
+.aquarium__fish-whole {
+    animation: fish-float 5s ease-in-out infinite;
+}
+
+@keyframes fish-float {
+    0% {
+        transform: translateY(0px) rotate(-37deg);
+    }
+    50% {
+        transform: translateY(-25px) rotate(-37deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(-37deg);
+    }
+}
+
 .aquarium__fish-body:hover {
     transform: scale(1.1);
 }
