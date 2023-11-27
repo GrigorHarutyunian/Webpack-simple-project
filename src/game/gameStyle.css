@@ -265,7 +265,7 @@
     height: 100px;
     margin: auto;
     cursor: grab;
-    transition: all 1s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 
 .aquarium__fish-body:hover {
