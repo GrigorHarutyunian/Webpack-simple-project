@@ -3,10 +3,29 @@
   padding: 0;
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   transform-style: preserve-3d;
+  padding-bottom: 251px;
+  padding-top: 50px;
+}
+
+.aboutUsContent {
+  margin-top: 100px;
+  margin-bottom: 35px;
+}
+
+.aboutUsSection h1{
+    font-size: 45px;
+    color: #00207F;
+    margin-bottom: 35px;
+}
+
+.aboutUsSection h2{
+    color: #00207F;
+    text-align: center;
 }
 
 .box {
@@ -26,7 +45,7 @@
   height: 100%;
   transform-origin: center;
   transform-style: preserve-3d;
-  transform: rotateY(calc(var(--i) * 60deg)) translateZ(240px);
+  transform: rotateY(calc(var(--i) * 315deg)) translateZ(280px);
   -webkit-box-reflect: below 0px
     linear-gradient(transparent, transparent, black);
 }
@@ -41,18 +60,44 @@
   user-select: none;
 }
 
+.box span:hover > p {
+  opacity: 1;
+  transition: all .5 ease-in-out;
+}
+
+.box span p {
+  position: relative;
+  z-index: 1;
+  color: #FEC763;
+  display: flex;
+  font-size: 13px;
+  pointer-events: none;
+  text-align: center;
+  font-weight: bold;
+  height: 100%;
+  padding: 20px;
+  background: #00207f9c;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all .5 ease-in-out;
+}
+
 .btns {
   position: absolute;
-  bottom: 44px;
+  bottom: 50px;
   display: flex;
   gap: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+
 }
 
 .btns .btn {
   position: relative;
   width: 60px;
   height: 60px;
-  border: 2px solid white;
+  border: 2px solid #00207F;
   border-radius: 50px;
   display: flex;
   justify-content: center;
@@ -61,7 +106,7 @@
 }
 
 .btns .btn:active {
-  background: white;
+  background: #00207F;
 }
 
 .btns .btn::before {
@@ -69,15 +114,51 @@
   position: absolute;
   width: 15px;
   height: 15px;
-  border-top: 3px solid white;
-  border-right: 3px solid white;
+  border-top: 3px solid #00207F;
+  border-right: 3px solid #00207F;
   transform: rotate(45deg) translate(-2.5px, 2.5px);
 }
 
 .btns .btn.prev::before {
   transform: rotate(225deg) translate(-2.5px, 2.5px);
 }
+
 .btns .btn:active::before {
-  border-top: 3px solid black;
-  border-right: 3px solid black;
+  border-top: 3px solid #FEC763;
+  border-right: 3px solid #FEC763;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .aboutUsContent {
+    margin-top: 100px;
+    margin-bottom: 35px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .aboutUsSection h1 {
+    font-size: 39px;
+    margin-bottom: 25px;
+  }
+
+  .aboutUsSection h2 {
+    font-size: 21px;
+  }
+
+  .aboutUsSection {
+    padding-top: 25px;
+    overflow: hidden;
+  }
+
+  .aboutUsContent {
+    margin-top: 55px;
+    padding-bottom: 0;
+  }
+
+  .btns {
+    bottom: 25px;
+  }
+}
+
