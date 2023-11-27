@@ -32,9 +32,9 @@ body.disabled {
     max-width: 1200px;
     width: 100%;
     margin: auto;
-    padding: 20px; 
+    padding: 0 15px;
 }
- 
+
 #root {
     background: rgb(237, 237, 242);
     min-height: 100vh;

@@ -2,10 +2,12 @@ header {
     position: fixed;
     z-index: 99;
     width: 100%;
+    padding: 15px 0;
     transition: all .3s ease-in-out;
 }
 
 header.sticky {
+    padding: 7px 0;
     background-color: #00207F;
     transition: all .3s ease-in-out;
 }
@@ -21,7 +23,6 @@ header.sticky .logo {
 }
 
 header.sticky .container {
-    padding: 0 5px 0 5px !important;
     transition: all .3s ease-in-out;
 }
 
@@ -53,7 +54,6 @@ header.sticky nav ul li a::before {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
 }
 
 nav {
@@ -75,7 +75,7 @@ nav ul li a {
     display: block;
     color: #fff;
     overflow: hidden;
-    height: 30px;
+    padding: 5px 0;
     text-align: center;
     transition: all .3s ease-in-out;
     text-shadow: 3px 0px 7px rgba(31, 30, 29, 0.2), -3px 0px 7px rgba(31, 30, 26, 0.2), 0px 4px 7px rgba(28, 27, 23, 0.2);
@@ -215,6 +215,10 @@ nav.active {
 
     nav ul li {
         margin: 10px 0 10px 0;
+    }
+
+    nav ul li a::before {
+        background-color: #FEC763;
     }
 
     nav ul li a::before,
