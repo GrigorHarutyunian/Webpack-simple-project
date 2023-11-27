@@ -7,7 +7,7 @@ export function createGameSection({ element, className }) {
   const gameSection = document.createElement(element);
   gameSection.setAttribute("class", className);
   gameSection.setAttribute('id', 'game');
-  
+
   const outerWrapper = document.createElement('div');
   outerWrapper.classList.add('aquarium__outer-wrapper');
 
@@ -33,7 +33,7 @@ export function createGameSection({ element, className }) {
   // Create game start title element
   const title = document.createElement('div');
   title.classList.add('aquarium__game-start-title');
-  title.textContent = 'Aquarium Game';
+  title.textContent = 'Aquasqape Game';
 
   // Create game start button
   const startButton = document.createElement('button');
