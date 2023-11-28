@@ -6,15 +6,14 @@
     overflow: hidden;
 }
 
-.aquarium__game-start {
+.aquarium__game-start,
+.aquarium__feed-fish-modal {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 40;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0 15px;
@@ -26,6 +25,17 @@
     transition: all .5s ease-in-out;
 }
 
+.aquarium__game-start {
+    flex-direction: column;
+    z-index: 40;
+}
+
+.aquarium__feed-fish-modal {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+}
+
 .aquarium__game-start-title {
     text-align: center;
     font-size: 70px;
@@ -33,7 +43,8 @@
     color: #FEC763;
 }
 
-.aquarium__game-start-button {
+.aquarium__game-start-button,
+.aquarium__feed-fish-button {
     position: relative;
     display: inline-flex;
     justify-content: center;
@@ -53,12 +64,14 @@
     z-index: 1;
 }
 
-.aquarium__game-start-button:hover {
+.aquarium__game-start-button:hover,
+.aquarium__feed-fish-button:hover {
     border-color: #FEC763;
     color: #00207F;
 }
 
-.aquarium__game-start-button::before {
+.aquarium__game-start-button::before,
+.aquarium__feed-fish-button::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -70,8 +83,59 @@
     z-index: -1;
 }
 
-.aquarium__game-start-button:hover::before {
+.aquarium__game-start-button:hover::before,
+.aquarium__feed-fish-button:hover::before {
     height: 100%;
+}
+
+.aquarium__energy-level-wrapper {
+    position: absolute;
+    top: 110px;
+    left: 50px;
+    z-index: 5;
+    width: 100%;
+    max-width: 400px;
+    height: 24px;
+    padding: 2px;
+    background: rgba( 0, 0, 0, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.aquarium__energy-level-text {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    padding: 2px 4px;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 20px;
+    color: #fff;
+}
+
+.aquarium__energy-percent-text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+}
+
+.aquarium__energy-level {
+    height: 100%;
+    background-color: #FEC763;
+    border-radius: 10px;
+    transition: all .5s ease-in-out;
 }
 
 .aquarium__plant {

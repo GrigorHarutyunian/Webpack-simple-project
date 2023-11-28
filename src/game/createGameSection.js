@@ -119,6 +119,48 @@ export function createGameSection({ element, className }) {
     fishWhole.appendChild(fishBody2);
     fishBody.appendChild(fishWhole);
 
+    // Create energy level wrapper
+    const energyLevelWrapper = document.createElement('div');
+    energyLevelWrapper.classList.add('aquarium__energy-level-wrapper');
+
+    // Add text "Fish energy level" on top of energy level wrapper
+    const energyLevelText = document.createElement('div');
+    energyLevelText.textContent = 'Fish energy level';
+    energyLevelText.classList.add('aquarium__energy-level-text');
+    energyLevelWrapper.appendChild(energyLevelText);
+
+    // Create energy level element
+    const energyLevel = document.createElement('div');
+    energyLevel.classList.add('aquarium__energy-level');
+    energyLevel.style.width = '100%'; // Initial energy level is 100%
+
+    // Create energy percent text
+    const energyPercentText = document.createElement('div');
+    energyPercentText.textContent = '100%';
+    energyPercentText.classList.add('aquarium__energy-percent-text');
+    energyLevelWrapper.appendChild(energyPercentText);
+
+    // Append energy level element to wrapper
+    energyLevelWrapper.appendChild(energyLevel);
+
+    // Append energy level wrapper to outer wrapper
+    outerWrapper.appendChild(energyLevelWrapper);
+
+    // Add modal structure
+    const feedFishModal = document.createElement('div');
+    feedFishModal.classList.add('aquarium__feed-fish-modal');
+
+    const modalButton = document.createElement('button');
+    modalButton.classList.add('aquarium__feed-fish-button');
+    modalButton.textContent = 'Feed the fish';
+
+    feedFishModal.appendChild(modalButton);
+
+    outerWrapper.appendChild(feedFishModal);
+
+    // Energy level variable
+    let fishEnergyLevel = 100;
+
     // Add click event listener to the fish element
     fishBody.addEventListener('click', function (event) {
       const fishOffsetLeft = this.offsetLeft;
@@ -140,6 +182,43 @@ export function createGameSection({ element, className }) {
 
       this.style.left = leftCoordinate + 'px';
       this.style.top = Math.floor(Math.random() * (outerWrapper.clientHeight - this.clientHeight)) + 'px';
+
+      // Reduce energy level on each click
+      fishEnergyLevel -= 25;
+      if (fishEnergyLevel < 0) {
+        fishEnergyLevel = 0;
+      }
+
+      // Update energy level display
+      energyLevel.style.width = `${fishEnergyLevel}%`;
+      energyPercentText.textContent = `${fishEnergyLevel}%`;
+
+      // Check if energy level is zero and take appropriate action
+      if (fishEnergyLevel === 0) {
+        // Display the feed fish modal
+        feedFishModal.style.opacity = '1';
+        feedFishModal.style.visibility = 'visible';
+        feedFishModal.style.zIndex = '40';
+
+        // Implement additional logic if needed
+      }
+    });
+
+    // Add click event listener to the modal button
+    modalButton.addEventListener('click', () => {
+      // Hide the feed fish modal
+      feedFishModal.style.opacity = '0';
+      feedFishModal.style.visibility = 'hidden';
+      feedFishModal.style.zIndex = '-1';
+
+      // Add additional logic for feeding the fish if needed
+
+      // Reset fish energy level
+      fishEnergyLevel = 100;
+
+      // Update energy level display
+      energyLevel.style.width = `${fishEnergyLevel}%`;
+      energyPercentText.textContent = `${fishEnergyLevel}%`;
     });
 
     return fishBody;
