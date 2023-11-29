@@ -1,12 +1,12 @@
 import checkImg from "./conctactsIMG/kisspng-check-mark-x-mark-clip-art-check-marks-5a7c0970903068.7393423315180783205906.png";
 import xmark from "./conctactsIMG/kisspng-red-x-x-mark-computer-icons-clip-art-red-x-png-5ab19106316800.2072037015215864382024.png";
+let contactsObj = {};
 
 export function inputChange(obj) {
   let value = "";
   const inputs = document.querySelectorAll("input");
   inputs.forEach((val, i) => {
     val.addEventListener("input", (evt) => {
-      console.log(val.value);
       const privateDiv = document.getElementById(`privateDiv${i}`);
       value = evt.target.value;
       if (value !== "") {
@@ -19,6 +19,7 @@ export function inputChange(obj) {
             if (isValideName(value).label === true) {
               img.src = checkImg;
               obj.name = true;
+              contactsObj.name = value;
             } else {
               img.src = xmark;
               obj.name = false;
@@ -29,6 +30,7 @@ export function inputChange(obj) {
             if (isValideName(value).label === true) {
               img.src = checkImg;
               obj.lastname = true;
+              contactsObj.lastname = value;
             } else {
               img.src = xmark;
               obj.lastname = false;
@@ -39,6 +41,7 @@ export function inputChange(obj) {
             if (isValideEmail(value).label === true) {
               img.src = checkImg;
               obj.email = true;
+              contactsObj.email = value;
             } else {
               img.src = xmark;
               obj.email = false;
@@ -49,6 +52,7 @@ export function inputChange(obj) {
             if (isValideNumber(value).label === true) {
               img.src = checkImg;
               obj.phoneNumber = true;
+              contactsObj.phoneNumber = value;
             } else {
               img.src = xmark;
               obj.phoneNumber = false;
@@ -83,6 +87,7 @@ export function textareaChange(obj) {
         img.src = xmark;
         obj.text = false;
       } else {
+        contactsObj.message = value;
         p.innerText = "ok";
         img.src = checkImg;
         obj.text = true;
@@ -198,17 +203,19 @@ export function buttonOnclick(evt, validationObject) {
 
   for (let key in validationObject) {
     if (!validationObject[key]) {
+      contactsObj = {};
       img1.src = xmark;
+      console.log(contactsObj);
       evt.target.innerText = "";
       evt.target.append(img1);
       cleareAllWritens(validationObject);
-      console.log(validationObject);
       return;
     }
   }
+  recruitingMessage(contactsObj);
   img1.src = checkImg;
   evt.target.innerText = "";
-
+  console.log(contactsObj);
   evt.target.append(img1);
   cleareAllWritens(validationObject);
 
@@ -246,4 +253,14 @@ function cleareAllWritens(validationObject) {
   }, 2000);
 
   textarea.value = "";
+}
+
+function recruitingMessage(data) {
+  fetch("https://6567929a64fcff8d73109fc0.mockapi.io/aquarium/aquarium", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
 }
