@@ -31,17 +31,64 @@ export function createGameSection({ element, className }) {
   gameStart.classList.add('aquarium__game-start');
 
   // Create game start title element
-  const title = document.createElement('div');
+  const title = document.createElement('h2');
   title.classList.add('aquarium__game-start-title');
   title.textContent = 'Aquasqape Game';
+
+  // Create game start subtitle element
+  const subTitle = document.createElement('h3');
+  subTitle.classList.add('aquarium__game-start-subtitle');
+  subTitle.textContent = 'Select a color to customize your fish!';
+
+  // Create game color picker
+  const colorPicker = document.createElement('div');
+  colorPicker.classList.add('aquarium__game-color-picker');
+
+  // Define color options
+  const colorOptions = ['orange', 'amber', 'pink', 'lime', 'aquamarine', 'indigo'];
+
+  // Create color labels and append to color picker
+  colorOptions.forEach(color => {
+    const colorButton = document.createElement('div');
+    colorButton.classList.add('aquarium__game-color-button');
+    colorButton.classList.add(`aquarium__game-color-button--${color}`);
+
+    // Add click event listener to color button
+    colorButton.addEventListener('click', () => {
+      // Get the background color of the clicked button
+      const bgColor = getComputedStyle(colorButton).getPropertyValue('background-color');
+
+      // Apply the background color to specified elements
+      const elementsToColor = [
+        'aquarium__fish-top-fin',
+        'aquarium__fish-tail-fin',
+        'aquarium__fish-body-2',
+        'aquarium__fish-tail-1',
+        'aquarium__fish-tail-2',
+        'aquarium__fish-tail-3',
+        'aquarium__fish-tail-4'
+      ];
+
+      elementsToColor.forEach(elementClass => {
+        const element = document.querySelector(`.${elementClass}`);
+        if (element) {
+          element.style.backgroundColor = bgColor;
+        }
+      });
+    });
+
+    colorPicker.appendChild(colorButton);
+  });
 
   // Create game start button
   const startButton = document.createElement('button');
   startButton.classList.add('aquarium__game-start-button');
   startButton.textContent = 'Start To Play';
 
-  // Append title and start button to game start element
+  // Append title, subtitle color picker and start button to game start element
   gameStart.appendChild(title);
+  gameStart.appendChild(subTitle);
+  gameStart.appendChild(colorPicker);
   gameStart.appendChild(startButton);
 
   // Append game start element to outer wrapper
