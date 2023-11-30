@@ -126,6 +126,7 @@ function createOurDescriptions({ element, className }) {
     const a = document.createElement("a");
     const i = document.createElement("i");
     i.setAttribute("class", sitesLogo[x]);
+    a.href = "#";
     a.append(i);
     webSites.append(a);
   }
