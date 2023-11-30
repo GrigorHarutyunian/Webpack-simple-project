@@ -62,9 +62,32 @@
     height: 50px;
     margin: 10px;
     cursor: pointer;
+    overflow: hidden;
     border-radius: 50%;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
     transition: all .4s ease-in-out;
+}
+
+.aquarium__game-color-button span {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: rippleAnimation 1s linear infinite;
+}
+
+@keyframes rippleAnimation {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0.7;
+    }
+    100% {
+        width: 400px;
+        height: 400px;
+        opacity: 0;
+    }
 }
 
 .aquarium__game-color-button:hover {
