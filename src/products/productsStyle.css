@@ -1,5 +1,6 @@
 .productsSection {
     min-height: 100vh;
+    padding: 30px 0;
     background-image: linear-gradient(rgba(0, 0, 0, .5),rgb(0, 32, 127, .5)), url('./productsImages/background.jpg');
     display: flex;
     justify-content: center;
@@ -111,7 +112,7 @@
 @media only screen and (max-width: 1024px) {
     .product {
         width: 48%;
-    }    
+    }
 }
 
 @media only screen and (max-width: 500px){
