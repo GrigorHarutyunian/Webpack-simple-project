@@ -95,7 +95,7 @@
     left: 50%;
     transform: translateX(-50%);
     max-width: 1170px;
-    width: 75%;
+    width: 95%;
 }
 
 .category-item {
@@ -205,6 +205,7 @@
     .categories {
         top: 108px;
         flex-direction: column;
+        width: 91%;
     }
 
     .category-item:first-child {
