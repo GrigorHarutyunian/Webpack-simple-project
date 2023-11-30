@@ -54,11 +54,24 @@ export function createGameSection({ element, className }) {
     colorButton.classList.add(`aquarium__game-color-button--${color}`);
 
     // Add click event listener to color button
-    colorButton.addEventListener('click', () => {
+    colorButton.addEventListener('click', (e) => {
+      // Ripple effect
+      let x = e.clientX - e.target.offsetLeft;
+      let y = e.clientY - e.target.offsetTop;
+
+      let ripples = document.createElement('span');
+      ripples.style.left = x + 'px';
+      ripples.style.top = y + 'px';
+      colorButton.appendChild(ripples);
+
+      setTimeout(() => {
+        ripples.remove();
+      }, 1000);
+
       // Get the background color of the clicked button
       const bgColor = getComputedStyle(colorButton).getPropertyValue('background-color');
 
-      // Apply the background color to specified elements
+      // Define elementsToColor array
       const elementsToColor = [
         'aquarium__fish-top-fin',
         'aquarium__fish-tail-fin',
@@ -69,6 +82,7 @@ export function createGameSection({ element, className }) {
         'aquarium__fish-tail-4'
       ];
 
+      // Apply the background color to specified elements
       elementsToColor.forEach(elementClass => {
         const element = document.querySelector(`.${elementClass}`);
         if (element) {
