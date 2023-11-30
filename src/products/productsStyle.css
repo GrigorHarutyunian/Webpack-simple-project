@@ -1,5 +1,5 @@
 .productsSection {
-    min-height: 100vh;
+    min-height: 125vh;
     padding: 30px 0;
     background-image: linear-gradient(rgba(0, 0, 0, .5),rgb(0, 32, 127, .5)), url('./productsImages/background.jpg');
     display: flex;
@@ -193,7 +193,7 @@
     }
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 400px){
     .product {
         width: 100%;
     }
@@ -203,7 +203,7 @@
     }
 
     .categories {
-        top: 87px;
+        top: 108px;
         flex-direction: column;
     }
 
