@@ -1,7 +1,7 @@
 import { createHeader, createLoading, load } from "./header/createHeader";
 import { createMain } from "./main/createMain";
 import { createHeroSection } from "./hero/createHeroSection";
-import { createProductsSection } from "./products/createProductsSection";
+import { createProductsSection, openCategory } from "./products/createProductsSection";
 import { createGameSection } from "./game/createGameSection";
 import { createContactsSection } from "./contacts/createContactsSection";
 import { createAboutUsSection } from "./about-us/createAboutUsSection";
@@ -45,6 +45,7 @@ burgerMenu();
 activeLink();
 createLoading();
 smoothScroll();
+openCategory();
 
 window.onscroll = function () {
   stickyHeader();

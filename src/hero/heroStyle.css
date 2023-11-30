@@ -80,12 +80,12 @@ body.disabled {
     }
 }
 
-
 @media only screen and (max-width: 768px) {
     .hero_content p {
         width: 100%;
         font-size: 19px;
         line-height: 31px;
+        text-align: center;
     }
 
     .hero_content .container {
