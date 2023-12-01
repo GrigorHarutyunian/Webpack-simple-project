@@ -201,8 +201,37 @@ export function createGameSection({ element, className }) {
     energyPercentText.classList.add('aquarium__energy-percent-text');
     energyLevelWrapper.appendChild(energyPercentText);
 
+    // Create finish button
+    const finishButton = document.createElement('div');
+    finishButton.textContent = 'Finish The Game';
+    finishButton.classList.add('aquarium__finish-button');
+
+    // Energy level variable
+    let fishEnergyLevel = 100;
+
+    // Add click event listener to finish button
+    finishButton.addEventListener('click', () => {
+      // Reset inline styles for aquarium__fish-body
+      const fishBodyElements = document.querySelectorAll('.aquarium__fish-body');
+      fishBodyElements.forEach(element => {
+        element.removeAttribute('style');
+      });
+
+      // Set aquarium__energy-percent-text text to '100%'
+      energyPercentText.textContent = '100%';
+
+      // Set aquarium__energy-level width to 100%
+      energyLevel.style.width = '100%';
+
+      fishEnergyLevel = 100;
+
+      // Remove inline style for aquarium__game-start
+      gameStart.removeAttribute('style');
+    });
+
     // Append energy level element to wrapper
     energyLevelWrapper.appendChild(energyLevel);
+    energyLevelWrapper.appendChild(finishButton);
 
     // Append energy level wrapper to outer wrapper
     outerWrapper.appendChild(energyLevelWrapper);
@@ -218,9 +247,6 @@ export function createGameSection({ element, className }) {
     feedFishModal.appendChild(modalButton);
 
     outerWrapper.appendChild(feedFishModal);
-
-    // Energy level variable
-    let fishEnergyLevel = 100;
 
     // Add click event listener to the fish element
     fishBody.addEventListener('click', function (event) {
@@ -260,8 +286,6 @@ export function createGameSection({ element, className }) {
         feedFishModal.style.opacity = '1';
         feedFishModal.style.visibility = 'visible';
         feedFishModal.style.zIndex = '40';
-
-        // Implement additional logic if needed
       }
     });
 
@@ -271,8 +295,6 @@ export function createGameSection({ element, className }) {
       feedFishModal.style.opacity = '0';
       feedFishModal.style.visibility = 'hidden';
       feedFishModal.style.zIndex = '-1';
-
-      // Add additional logic for feeding the fish if needed
 
       // Reset fish energy level
       fishEnergyLevel = 100;
