@@ -1,5 +1,6 @@
 const path = require("path");
-const autoprefixer = require('autoprefixer');
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const autoprefixer = require("autoprefixer");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
@@ -26,6 +27,12 @@ module.exports = {
       template: path.resolve(__dirname, "src/index.html"),
     }),
     new CleanWebpackPlugin(),
+    new FaviconsWebpackPlugin({
+      logo: "src/images/favicon.ico", // path to your favicon
+      outputPath: "src/", // output path (optional)
+      prefix: "src/", // prefix for the favicon files (optional)
+      inject: true, // inject the link tag into the HTML
+    }),
   ],
 
   module: {
@@ -34,9 +41,9 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env'],
+            presets: ["@babel/preset-env"],
           },
         },
       },
@@ -59,15 +66,13 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
-          'css-loader',
+          "style-loader",
+          "css-loader",
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
               postcssOptions: {
-                plugins: [
-                  autoprefixer(),
-                ],
+                plugins: [autoprefixer()],
               },
             },
           },
