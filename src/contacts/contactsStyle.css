@@ -145,7 +145,7 @@ button {
     overflow: hidden;
     padding: 15px 29px;
     background-color:#FEC763 ;
-    color: #fff;
+    color: #00207F;
     border: none;
     border-radius: 50px;
     margin-top: 35px;
@@ -160,7 +160,7 @@ button {
 
 button:hover {
   background-color:#00207F; 
-  color: #fff; 
+  color: #FEC763; 
 }
 
 button::before {

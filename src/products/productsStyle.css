@@ -100,7 +100,7 @@
 
 .category-item {
     padding: 10px 20px;
-    color: #fff;
+    color: #FEC763;
     font-size: 25px;
     transition: all .5s ease-in-out;
     cursor: pointer;
@@ -126,7 +126,7 @@
 
 .category-item:hover:not(.category-item.active) {
     background-color: #00207f;
-    color: #fff;
+    color: #FEC763;
     transition: all .5s ease-in-out;
 }
 
