@@ -205,7 +205,6 @@ export function buttonOnclick(evt, validationObject) {
     if (!validationObject[key]) {
       contactsObj = {};
       img1.src = xmark;
-      console.log(contactsObj);
       evt.target.innerText = "";
       evt.target.append(img1);
       cleareAllWritens(validationObject);
@@ -215,7 +214,6 @@ export function buttonOnclick(evt, validationObject) {
   recruitingMessage(contactsObj);
   img1.src = checkImg;
   evt.target.innerText = "";
-  console.log(contactsObj);
   evt.target.append(img1);
   cleareAllWritens(validationObject);
 
