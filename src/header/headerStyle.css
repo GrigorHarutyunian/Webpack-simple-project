@@ -115,6 +115,7 @@ nav ul li:hover > a::before {
     position: relative;
     display: none;
     transition: all .5s ease-in-out;
+    cursor: pointer;
 }
 
 .burger:after,
@@ -126,6 +127,7 @@ nav ul li:hover > a::before {
     height: 100%;
     background-color: #FEC763;
     transition: all .5s ease-in-out;
+    cursor: pointer;
 }
 
 .burger::before {
