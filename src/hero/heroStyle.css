@@ -19,7 +19,7 @@ body.disabled {
 .hero_content p {
     width: 50%;
     margin: 25px 0 25px 0;
-    color: #fff;
+    color: #FEC763;
     line-height: 35px;
     font-size: 19px;
     text-shadow: 3px 0px 7px rgba(31, 30, 29, 0.5), -3px 0px 7px rgba(31, 30, 26, 0.5), 0px 4px 7px rgba(28, 27, 23, 0.2);
@@ -31,7 +31,7 @@ body.disabled {
 }
 
 .hero_content h1 {
-    color: #fff;
+    color: #FEC763;
     font-size:  65px;
     text-shadow: 3px 0px 7px rgba(31, 30, 29, 0.3), -3px 0px 7px rgba(31, 30, 26, 0.3), 0px 4px 7px rgba(28, 27, 23, 0.3);
 }

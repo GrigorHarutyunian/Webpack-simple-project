@@ -30,7 +30,7 @@ function createHeroContent({ element, className }) {
   const h1 = document.createElement("h1");
   h1.innerText = "AQUASQAPE";
   const p = document.createElement("p");
-  p.innerText = `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat officia doloremque similique vitae rem ratione quisquam optio distinctio dignissimos culpa nisi hic, pariatur enim amet deleniti. Ex adipisci officia optio.`;
+  p.innerText = `AQUASQAPE Inc. is a company focused on customer's needs by offering a full line of aquatic products as well as design and engineering.`;
   const a = document.createElement("a");
   a.setAttribute('class', 'button-1');
   a.href = "#products";

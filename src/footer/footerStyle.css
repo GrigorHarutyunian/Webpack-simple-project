@@ -31,17 +31,46 @@ footer .footer_row .footer_column h4 {
 footer .footer_row .footer_column ul li,
 footer .footer_row .footer_column ul li a {
     display: block;
-    color: #fff;
+    color: #FEC763;
     font-size: 16px;
+    position: relative;
+    width: max-content;
+    transition: all .3s ease-in-out;
 }
 
-footer .footer_row .footer_column ul li:hover > a,
-footer .footer_row .footer_column ul li:hover {
-    color: #FEC763;
+footer .footer_row .footer_column:not(.last-child) ul li a {
+    padding: 5px 0;
+    overflow: hidden;
+}
+
+footer .footer_row .footer_column:not(:last-child) ul li a::before {
+    position: absolute;
+    content: '';
+    bottom: -2px;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background-color: #FEC763;
+    transition: all .5s ease-in-out;
+    border-radius: 5px;
+}
+
+footer .footer_column i {
+    margin-right: 10px;
+}
+
+footer .footer_row .footer_column:not(:last-child) ul li:hover > a::before {
+    transition: all .3s ease-in-out;
+    left: 0;
 }
 
 footer .logo {
     width: 100%;
+}
+
+footer .footer_row .footer_column:last-child ul li:hover {
+    opacity: .7;
+    transition: all .3s ease-in-out;
 }
 
 footer .logo a {
