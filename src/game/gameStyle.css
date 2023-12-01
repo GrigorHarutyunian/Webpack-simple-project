@@ -118,8 +118,13 @@
     background-color: #A992FA;
 }
 
+.aquarium__finish-button {
+    margin-top: 20px;
+}
+
 .aquarium__game-start-button,
-.aquarium__feed-fish-button {
+.aquarium__feed-fish-button,
+.aquarium__finish-button {
     position: relative;
     display: inline-flex;
     justify-content: center;
@@ -140,13 +145,15 @@
 }
 
 .aquarium__game-start-button:hover,
-.aquarium__feed-fish-button:hover {
+.aquarium__feed-fish-button:hover,
+.aquarium__finish-button:hover {
     border-color: #FEC763;
     color: #00207F;
 }
 
 .aquarium__game-start-button::before,
-.aquarium__feed-fish-button::before {
+.aquarium__feed-fish-button::before,
+.aquarium__finish-button::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -159,7 +166,8 @@
 }
 
 .aquarium__game-start-button:hover::before,
-.aquarium__feed-fish-button:hover::before {
+.aquarium__feed-fish-button:hover::before,
+.aquarium__finish-button:hover::before {
     height: 100%;
 }
 
